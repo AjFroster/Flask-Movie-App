@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Select Movie{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1>Select a Movie</h1>
+  <form method="POST" action="{{ url_for('select_movie') }}">
+      <label for="movie_selection">Select a Movie:</label>
+      <select name="movie_selection" id="movie_selection">
+          {% for movie in movies %}
+          <option value="{{ movie.id }}">{{ movie.title }}</option>
+          {% endfor %}
+      </select>
+      <input type="submit" value="Submit">
+  </form>
+    
+</div>
+  
+
+    
+{% endblock %}
